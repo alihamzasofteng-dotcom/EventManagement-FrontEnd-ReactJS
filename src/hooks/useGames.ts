@@ -26,23 +26,29 @@ export interface Game {
 const useGames = () => {
     const [games, setGames] = useState<Game[]>([]);
     const [error, setError] = useState("");
+    const [isLoading, setLoading] = useState(false);
     // effect hook to send a fetch request to backend
     useEffect(() => {
       const controller = new AbortController();
+      setLoading(true);
       apiClient
         .get<FetchGamesResponse>("/games",{signal: controller.signal})
         //setgame oe aty us ny interface define kiya ha
-        .then((res) => setGames(res.data.results))
+        .then((res) => {
+          setGames(res.data.results)
+          setLoading(false)
+        })
         .catch((err) => 
         {   
             if(err instanceof CanceledError) return;
-            setError(err.message)
+            setError(err.message);
+            setLoading(false);
         }
             );
         return () => controller.abort();
     }, []); // to avoid infinite refetching
 
-    return {games, error}
+    return {games, error, isLoading}
 }
 
 export default useGames;
