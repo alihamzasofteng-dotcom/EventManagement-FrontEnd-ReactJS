@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { Genre } from "./useGenre";
 
 export interface Platform{
   id: number,
@@ -14,7 +15,9 @@ export interface Game {
     parent_platforms: {platform: Platform}[],
     metacritic: number
   }
-
-const useGames = () => useData<Game>('/games');
+// games hook passes this selected genre as a query string paramerter to the data hook 
+// we had to openup data hook and make it more flexible - now we can pass query string params and request data to request objects
+// we also added an array of dependencies if any of this dependency changes , our effect will rerun and refetch the data from server
+const useGames = (selectedGenre: Genre | null) => useData<Game>('/games',{params: {genres: selectedGenre?.id}},[selectedGenre?.id]);
 
 export default useGames;
