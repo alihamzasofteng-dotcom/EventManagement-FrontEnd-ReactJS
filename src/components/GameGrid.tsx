@@ -3,8 +3,6 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { Genre } from "../hooks/useGenre";
-import { Platform } from "../hooks/usePlatforms";
 import { GameQuery } from "./../App";
 
 // we added new prop get its vale and pass it to games hook
