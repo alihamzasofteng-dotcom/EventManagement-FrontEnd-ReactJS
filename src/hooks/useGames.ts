@@ -14,7 +14,8 @@ export interface Game {
     name: string;
     background_image: string,
     parent_platforms: {platform: Platform}[],
-    metacritic: number
+    metacritic: number,
+    rating_top: number
   }
 // games hook passes this selected genre as a query string paramerter to the data hook 
 // we had to openup data hook and make it more flexible - now we can pass query string params and request data to request objects
