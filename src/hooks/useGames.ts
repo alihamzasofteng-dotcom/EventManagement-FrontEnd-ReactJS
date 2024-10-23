@@ -1,12 +1,11 @@
 import useData from "./useData";
 import { Genre } from "./useGenre";
-// ye wala ha jo import ho rha ha for filtering games query string main neechy ja rha ha usedata main
-import { Platform as PlatformFilter } from './usePlatforms';
+import { GameQuery } from './../App';
 
 // ye wala ha jo icons main lag rha ha game card main
 export interface Platform{
   id: number,
-  name: string,
+  name: string, 
   slug: string
 }
 
@@ -21,6 +20,6 @@ export interface Game {
 // games hook passes this selected genre as a query string paramerter to the data hook 
 // we had to openup data hook and make it more flexible - now we can pass query string params and request data to request objects
 // we also added an array of dependencies if any of this dependency changes , our effect will rerun and refetch the data from server
-const useGames = (selectedGenre: Genre | null, selectedPlatform: PlatformFilter | null) => useData<Game>('/games',{params: {genres: selectedGenre?.id , platforms : selectedPlatform?.id }},[selectedGenre?.id,selectedPlatform ?.id]);
+const useGames = (gameQuery:GameQuery) => useData<Game>('/games',{params: {genres: gameQuery.genre?.id , platforms : gameQuery.platform?.id }},[gameQuery]);
 
 export default useGames;
