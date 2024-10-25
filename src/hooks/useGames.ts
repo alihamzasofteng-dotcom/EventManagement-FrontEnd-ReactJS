@@ -1,5 +1,5 @@
 import { GameQuery } from './../App';
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import APIClient, { FetchResponse } from "../services/api-client";
 import { Platform } from './usePlatforms';
 
@@ -16,18 +16,20 @@ export interface Game {
     rating_top: number
   }
   //idr fetch is liye ky to tell the type of the data that useQuery expects from the queryFn
-  const useGames = (gameQuery:GameQuery) => useQuery<FetchResponse<Game>, Error>({
+  const useGames = (gameQuery:GameQuery) => useInfiniteQuery<FetchResponse<Game>, Error>({
     queryKey: ['gameQuery', gameQuery], // kuch bi is main change ho ga refetch ho ga just like dependency
-    queryFn: () => apiClient.getAll({
+    queryFn: ({pageParam=1, }) => apiClient.getAll({ 
       params: {
         genres: gameQuery.genre?.id , 
         parent_platforms : gameQuery.platform?.id,
         ordering: gameQuery.sortOrder,
-        search: gameQuery.searchText
+        search: gameQuery.searchText,
+        page: pageParam
        }
     }),
-    staleTime: 24*60*60*1000,
-   //initialData: {count: platforms.length, results: platforms}  
+    getNextPageParam: (lastPage, allPages) =>{
+      return lastPage.next ? allPages.length +1 : undefined;
+    }
   });
 
 
