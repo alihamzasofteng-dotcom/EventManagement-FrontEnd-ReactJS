@@ -1,0 +1,161 @@
+.navbar-container {
+  background-color: #262626;
+  color: white;
+  padding: 5px;
+  height: 46px;
+  position: relative;
+  display: flex;
+  /* width: 100%; */
+  width: 100vw; /* Ensure the navbar spans the full width of the viewport */
+  max-width: 100%; /* Prevent any accidental width restrictions */
+  box-sizing: border-box; /* Include padding and borders in the width calculation */
+}
+
+.navbar-brand {
+  font-size: 23px;
+  font-family: "Emilys Candy", serif;
+  font-weight: 400;
+  margin-top: 11px;
+  margin-left: 30px;
+}
+
+.navbar-animated-text-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.navbar-animated-text {
+  position: absolute;
+  white-space: nowrap;
+  display: inline-flex;
+  left: 100%;
+  transform: translateX(0);
+  animation: scroll-animation linear infinite;
+}
+
+@keyframes scroll-animation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.navbar-phone-number {
+  font-size: 23px;
+  font-family: "Emilys Candy", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.call-icon {
+  transform: translateY(5px);
+  font-size: 24px;
+}
+
+/* Media Queries */
+/* For very small screens: 320px or less */
+@media only screen and (max-width: 320px) {
+  .navbar-container {
+    flex-direction: row; /* Keep horizontal layout */
+    justify-content: space-between;
+    padding: 0 5px; /* Reduce padding for smaller screens */
+  }
+
+  .navbar-brand {
+    font-size: 18px; /* Slightly smaller font */
+    margin-left: 10px; /* Adjust left margin */
+  }
+
+  .navbar-animated-text-container {
+    padding: 0; /* Remove horizontal padding */
+  }
+
+  .navbar-phone-number {
+    margin-top: 10px;
+    font-size: 16px; /* Adjust phone number size */
+  }
+
+  .call-icon {
+    margin-top: 10px;
+    font-size: 16px; /* Adjust icon size */
+  }
+}
+
+/* For screens 321px to 767px */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .navbar-container {
+    flex-direction: row; /* Keep horizontal layout */
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+    margin-left: 15px; /* Adjust for smaller screens */
+  }
+
+  .navbar-phone-number {
+    margin-top: 3px;
+    font-size: 18px;
+  }
+
+  .call-icon {
+    margin-top: 3px;
+    font-size: 18px;
+  }
+}
+
+/* For screens 768px to 1023px */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .navbar-brand {
+    font-size: 21px;
+    margin-left: 25px;
+  }
+
+  .navbar-phone-number {
+    font-size: 20px;
+  }
+
+  .call-icon {
+    font-size: 20px;
+  }
+}
+
+/* For screens 1024px to 1439px */
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .navbar-brand {
+    font-size: 22px;
+    margin-left: 30px;
+  }
+
+  .navbar-phone-number {
+    font-size: 22px;
+  }
+
+  .call-icon {
+    font-size: 22px;
+  }
+}
+/* For screens 1440px and above */
+
+@media only screen and (min-width: 1440px) {
+  .navbar-brand {
+    font-size: 23px;
+    margin-left: 30px;
+  }
+
+  .navbar-phone-number {
+    font-size: 23px;
+  }
+
+  .call-icon {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,131 @@
+/* Navbar Container */
+.navbar-container {
+    background-color: #f7f7f7;
+    /* background-color: white; */
+    color: black;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navbar Item */
+.navbar-item {
+    margin: 0 1.7rem;
+    position: relative;
+}
+
+/* Menu Button */
+.menu-button {
+    height: 6vh;
+    color: black !important;
+    background: none !important;
+    font-family: serif !important;
+    font-weight: 450 !important;
+    box-shadow: none !important; /* Ensure no box shadow */
+    font-size:1.2rem !important;
+}
+
+.menu-button:hover,
+.menu-button:focus {
+    background-color: #f7f7f7; 
+    box-shadow: none; 
+}
+
+.menu-button span {
+    transition: color 0.2s ease;
+}
+
+.menu-button .chevron-icon {
+    transition: transform 0.2s ease;
+}
+
+/* Dropdown Button */
+.dropdown-button {
+    text-align: left !important;
+    color: black !important;
+    padding: 0.5rem 2rem 0.5rem 1rem !important;
+    font-family: serif !important;
+    font-weight: 450 !important;
+    text-decoration: none !important;
+    background: none !important; /* No background color */
+    font-size:1.2rem !important;
+}
+
+.dropdown-button:hover {
+    background-color: #f7f7f7;
+}
+
+.dropdown-button .dropdown-item {
+    color: black;
+}
+
+.dropdown-button .dropdown-item:hover {
+    color: #daa520;
+    transition: color 0.2s ease;
+}
+
+@keyframes movingLight {
+    0% {
+        border-color: #daa520;
+    }
+    25% {
+        border-color: pink; /* Bright color at the top-left */
+    }
+    50% {
+        border-color: orange;
+    }
+    75% {
+        border-color: #daa520; /* Bright color at the bottom-right */
+    }
+    100% {
+        border-color: pink;
+    }
+}
+/* Submenu */
+.submenu {
+    position: absolute ;
+    top: 0;
+    left: 100%;
+    padding: 0.5rem;
+    z-index: 1;
+    font-family: serif;
+    font-weight: 450;
+    min-width: 240px;
+    opacity: 0;
+    /* visibility: hidden; */
+    transition: opacity 0.1s ease, visibility 0.1s ease;
+    background-color: rgba(255, 255, 255, 0.9) !important; 
+    box-shadow: none !important; /* Remove all box shadows */
+    margin-left: 0.3rem !important;
+    border: 1px double black; /* Add solid border */
+    animation:movingLight 2s linear infinite;; /* Apply animation */
+    border-radius: 4px;
+    font-size:1.2rem !important;
+}
+
+/* Remove light dark box on submenu hover */
+.submenu:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Keeps submenu background consistent */
+    box-shadow: none; /* Ensure no dark box on hover */
+}
+
+.submenu.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Submenu Item */
+.submenu-item {
+    font-size:1.2rem !important;
+    color: black !important;
+    padding-left: 1rem !important;
+    background: none !important;
+}
+
+/* Remove light dark box on submenu item hover */
+.submenu-item:hover {
+    color: #daa520;
+    text-decoration: none;
+    /* background: none;  */
+}

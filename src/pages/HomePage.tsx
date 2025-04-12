@@ -1,41 +1,36 @@
-import { Grid, Show, GridItem, Flex, Box } from '@chakra-ui/react'
-import GameGrid from '../components/GameGrid'
-import GameHeading from '../components/GameHeading'
-import GenreList from '../components/GenreList'
-import PlatformSelector from '../components/PlatformSelector'
-import SortSelector from '../components/SortSelector'
+import AchievementSection from "../components/AchievementSection";
+import DarkBlueBox from "../components/DarkBlueBox";
+import HeroSection from "../components/HeroSection";
+import HomeAboutus from "../components/HomeAboutus";
+import HomeCategories from "../components/HomeCategories";
+import HomePageReview from "../components/HomePageReview";
+import HomePageVideo from "../components/HomePageVideo";
+import HomeTeam from "../components/HomeTeam";
+import InfiniteBrandScroller from "../components/InfiniteBrandScroller";
+import InfiniteImageScroller from "../components/InfiniteImageScroller";
+import LatestProject from "../components/LatestProject";
+import PricingSection from "../components/PricingSection";
+import video from "../videos/homepage-video.mp4";
+import InfiniteSoftwareScroll from "./../components/InfiniteSoftwareScroll";
 
 const HomePage = () => {
   return (
-    <Grid
-      templateAreas={{
-        base: `"main"`,
-        lg: `"aside main"`, // larger devices
-      }}
-      templateColumns={{
-        base: "1fr", // take all availble space on small
-        lg: "200px 1fr", // first 200 baki main grid all space
-      }}
-    >
-      <Show above="lg">
-        <GridItem area="aside" paddingX={5}>
-          <GenreList/>
-        </GridItem>
-      </Show>
-      <GridItem area="main">
-        <Box paddingLeft={10}>
-          <GameHeading />
-          <Flex marginBottom={1}>
-            <Box marginRight={5}>
-              <PlatformSelector/>
-            </Box>
-            <SortSelector/>
-          </Flex>
-        </Box>
-        <GameGrid />
-      </GridItem>
-    </Grid>
-  )
-}
+    <>
+      <HeroSection />
+      <HomePageVideo videoSrc={video} />
+      <InfiniteImageScroller />
+      <HomeCategories />
+      <AchievementSection />
+      <DarkBlueBox />
+      <HomeAboutus />
+      <HomePageReview />
+      <LatestProject />
+      <HomeTeam />
+      <InfiniteBrandScroller />
+      <InfiniteSoftwareScroll />
+      <PricingSection />
+    </>
+  );
+};
 
-export default HomePage
+export default HomePage;

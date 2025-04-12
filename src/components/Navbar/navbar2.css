@@ -1,0 +1,145 @@
+/* NavBar2.css */
+.navbar-container {
+    padding: 5px;
+    background-color: rgb(10, 0, 60);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    flex-wrap: nowrap; /* Prevent wrapping unless explicitly allowed */
+    align-items: center;
+  }
+  
+  .navbar-logo-box {
+    position: absolute;
+    left: 49px;
+    top: 38px;
+    height: 100px;
+    width: 195px;
+    background-color: rgb(10, 0, 70);
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    overflow: hidden;
+  }
+  
+  .navbar-logo-image {
+    object-fit: contain;
+    max-height: 115px;
+    max-width: 100%;
+  }
+  
+  .navbar-info {
+    /* height: 20px; Adjusted height for better alignment */
+   margin-left: 290px;
+  /* display: flex; */
+  /* align-items: center;
+   height: auto;
+  */
+  height: 20px;
+  flex-wrap: nowrap; /* No wrapping initially */
+  }
+  
+  .navbar-info-item {
+    font-size: 16px; /* Font size for the text */
+    font-family: serif;
+    font-weight: 400;
+  }
+  
+  .navbar-social-icons {
+    margin-left: 20px;
+    margin-bottom: 4px;
+  }
+  
+  .navbar-social-icon {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-user-actions {
+    font-size: 17px;
+    font-family: serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-user-actions a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-user-actions a:hover {
+    color: yellow.300;
+    text-decoration: underline;
+  }
+  
+  /* @media only screen and (max-width: 320px) {}
+  @media only screen and (min-width: 320px) and (max-width: 767px) {}
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {}
+  @media only screen and (min-width: 1024px) and (max-width: 1439px) {}
+  @media only screen and (min-width: 1440px) {} */
+  /* Media Queries */
+@media only screen and (max-width: 320px) {
+
+    .navbar-container {
+        flex-wrap: wrap; /* Allow wrapping for very narrow screens */
+        height: auto; /* Adjust container height */
+    }
+
+      .navbar-logo-box {
+        left: 5px;
+        top: 38px;
+        height: 50px;
+        width: 85px;
+      }
+      
+      .navbar-logo-image {
+        max-height: 50px;
+      }
+      
+      .navbar-info {
+        display: flex;
+        /* flex-direction: column; Stack items vertically */
+        /* align-items: flex-start; */
+        margin-left: 5px; /* Align to container */
+        height: auto; /* Adjust height */
+      }
+
+      .navbar-info-item {
+        font-size: 10px !important; /* Ensure this size is applied */
+        font-family: serif;
+        font-weight: 400;
+      }
+  
+     .navbar-social-icons {
+      margin-left: 0;
+     }
+  }
+  
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .navbar-container {
+      flex-wrap: wrap; /* Allow wrapping */
+    }
+  
+    .navbar-info {
+      flex-wrap: wrap; /* Allow wrapping within this section */
+      justify-content: space-between;
+    }
+  
+    .navbar-info-item {
+      font-size: 15px; /* Adjust font size */
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .navbar-info {
+      flex-wrap: nowrap; /* Maintain one row for larger screens */
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .navbar-container {
+      flex-wrap: nowrap; /* Ensure a single row on wider screens */
+    }
+  }
+  
