@@ -1,2 +1,1 @@
 *.ext filter=lfs diff=lfs merge=lfs -text
-src/videos/homepage-video.mp4 filter=lfs diff=lfs merge=lfs -text
