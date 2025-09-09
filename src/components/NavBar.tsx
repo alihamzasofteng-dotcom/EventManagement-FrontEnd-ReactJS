@@ -6,9 +6,9 @@ import NavBar3 from "./Navbar/NavBar3";
 const NavBar = () => {
   return (
     <>
-      {/* <NavBar1 /> */}
+      <NavBar1 />
       <NavBar2 />
-      {/* <NavBar3 /> */}
+      <NavBar3 />
     </>
   );
 };

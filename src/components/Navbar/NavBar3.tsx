@@ -120,7 +120,7 @@ const NavBar3 = () => {
   };
 
   return (
-    <Flex as="nav" className="navbar-container">
+    <Flex as="nav" className="navbar3-container">
       {sortedNavData.map((navbarItem: Navbar) => (
         <Box
           key={navbarItem?.id}

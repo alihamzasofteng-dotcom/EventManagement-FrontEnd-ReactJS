@@ -9,8 +9,10 @@ import {
 } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import Lottie from "lottie-react";
-import animation1 from "./lottie/animation1.json";
-import animation2 from "./lottie/animation2.json";
+import animation1 from "./lottie/Marriage animation.json";
+// import animation1 from "./lottie/animation1.json";
+// import animation2 from "./lottie/animation2.json";
+import animation2 from "./lottie/Butterfly hearts.json";
 import animation3 from "./lottie/animation3.json";
 import animation4 from "./lottie/animation4.json";
 
@@ -123,7 +125,12 @@ const HeroSection = () => {
             animationData={animation1}
             loop
             autoplay
-            style={{ marginTop: "20px", marginLeft: "45px" }}
+            style={{
+              marginTop: "0px",
+              // marginBottom: "5px",
+              marginLeft: "40px",
+              marginRight: "20px",
+            }}
           />
         </Box>
         <Box
@@ -138,7 +145,11 @@ const HeroSection = () => {
             animationData={animation2}
             loop
             autoplay
-            style={{ marginTop: "30px" }}
+            style={{
+              marginTop: "30px",
+              marginLeft: "40px",
+              marginRight: "20px",
+            }}
           />
         </Box>
         <Box

@@ -2,7 +2,7 @@ import { Box, HStack, Text } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 import { useEffect, useRef } from "react";
 import { IoMdCall } from "react-icons/io";
-import "../components/Navbar/navbar1.css"; // Import the external CSS file
+import "../components/Navbar/navbar1.css";
 
 const NavBar1 = () => {
   const scrollingRef = useRef<HTMLDivElement | null>(null);
@@ -37,7 +37,7 @@ const NavBar1 = () => {
 
   return (
     <HStack
-      className="navbar-container"
+      className="navbar1-container"
       justifyContent="space-between"
       alignItems="center"
     >
